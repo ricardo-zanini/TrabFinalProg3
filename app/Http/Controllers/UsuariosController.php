@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UsuariosController extends Controller
 {
@@ -37,38 +38,40 @@ class UsuariosController extends Controller
     // Ações de login
     public function login(Request $form)
     {
-        // Está enviando o formulário
+       // Está enviando o formulário
         if ($form->isMethod('POST'))
         {
-            $usuario = $form->username;
-            $senha = $form->password;
+            // Se um dos campos não for preenchidos, nem tenta o login e volta
+            // para a página anterior
+            $credenciais = $form->validate([
+            'username' => ['required'],
+            'password' => ['required'],
+            ]);
 
-            $consulta = Usuario::select('id', 'name', 'email', 'username', 'password')->where('usuario', $usuario)->get();
-
-            // Confere se encontrou algum usuário
-            if ($consulta->count())
+            // Tenta o login
+            if (Auth::attempt($credenciais))
             {
-                // Confere se a senha está correta
-                if (Hash::check($senha, $consulta[0]->password))
-                {
-                    unset($consulta[0]->password);
-
-                    session()->put('usuario', $consulta[0]);
-
-                    return redirect()->route('home');
-                }
+                session()->regenerate();
+                return redirect()->route('home');
             }
-
+            else
+            {
             // Login deu errado (usuário ou senha inválidos)
-            return redirect()->route('login')->with('erro', 'Usuário ou senha inválidos.');
+            return redirect()->route('login')->with('erro', 'Usuário ou
+            senha inválidos.');
+            }
         }
-
         return view('usuarios.login');
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        session()->forget('usuario');
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
         return redirect()->route('home');
     }
 }

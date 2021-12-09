@@ -23,7 +23,15 @@
         @foreach ($usuarios as $usuario)
         <tr>
             <td>{{ $usuario->id }}</td>
-            <td>{{ $usuario->nome }}</td>
+            <td 
+
+            @if ($usuario->admin == 1)
+                style='color:red;'
+            @else
+                
+            @endif
+
+          >{{ $usuario->name }}</td>
             <td>{{ $usuario->email }}</td>
         </tr>
         @endforeach

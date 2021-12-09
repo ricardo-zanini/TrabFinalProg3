@@ -8,6 +8,9 @@ use Illuminate\Contracts\Auth\Authenticatable;
 
 class Usuario extends Model implements Authenticatable
 {
+    protected $hidden = [
+        'password',
+    ];
     use HasFactory;
     public $timestamps = false;
     function getAuthIdentifierName() { return 'id';}
