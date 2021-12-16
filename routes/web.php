@@ -21,7 +21,7 @@ Route::get('/', function () {
     return view('home', ['pagina' => 'home']);
 })->name('home');
 
-Route::get('produtos', [ProdutosController::class, 'index'])->name('produtos');
+Route::get('produtos', [ProdutosController::class, 'index'])->middleware('auth')->name('produtos');
 
 Route::get('/produtos/inserir', [ProdutosController::class, 'create'])->name('produtos.inserir');
 
@@ -46,10 +46,13 @@ Route::prefix('usuarios')->group(function() {
 
 });
 
+Route::get('/profile', [UsuariosController::class, 'profile'])->name('profile.index');
+Route::get('/profile/edit', [UsuariosController::class, 'profileEdit'])->name('profile.edit');
+Route::get('/profile/password', [UsuariosController::class, 'profilePassword'])->name('profile.password');
+
 Route::get('/email/verify', function () {
     return view('auth.verify-email', ['pagina' => 'verify-email']);
    })->middleware('auth')->name('verification.notice');
-
 
 
    
@@ -58,6 +61,8 @@ Route::get('/email/verify/{id}/{hash}', function
 $request->fulfill();
 return redirect()->route('home');
 })->middleware(['auth', 'signed'])->name('verification.verify');
+
+
 
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();

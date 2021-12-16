@@ -33,7 +33,9 @@ class UsuariosController extends Controller
 
         $usuario->save();
         event(new Registered($usuario));
+        
         Auth::login($usuario);
+
         return redirect()->route('verification.notice');
     }
 
@@ -77,5 +79,14 @@ class UsuariosController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('home');
+    }
+    public function profile(Request $request){
+        return view('profile.index', ['pagina' => 'profile']);
+    }
+    public function profileEdit(Request $request){
+        return view('profile.index', ['pagina' => 'profile']);
+    }
+    public function profilePassword(Request $request){
+        return view('profile.index', ['pagina' => 'profile']);
     }
 }
