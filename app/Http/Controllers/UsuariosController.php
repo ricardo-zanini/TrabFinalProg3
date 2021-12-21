@@ -84,9 +84,26 @@ class UsuariosController extends Controller
         return view('profile.index', ['pagina' => 'profile']);
     }
     public function profileEdit(Request $request){
-        return view('profile.index', ['pagina' => 'profile']);
+        return view('profile.edit', ['pagina' => 'profile']);
     }
-    public function profilePassword(Request $request){
-        return view('profile.index', ['pagina' => 'profile']);
+    public function profilePassword(Usuario $user){
+        return view('profile.password', ['user' => $user, 'pagina' => 'profile']);
+    }
+    public function profileUpdatePassword(Request $form){
+        $user = Auth::user();
+        if(Hash::check($form->password,$user->password)){
+            if($form->novaSenha === $form->confirmarSenha){
+                $user->password = Hash::make($form->novaSenha);
+                $user->save();
+            }
+            else{
+                return view('profile.password', ['alert' => 'danger','mensagem'=> "Você não confirmou sua senha corretamente",'user' => $user, 'pagina' => 'profile']);
+            }
+        }
+        else{
+            return view('profile.password', ['alert' => 'danger','mensagem'=> "Senha Atual Incorreta",'user' => $user, 'pagina' => 'profile']);
+        }
+
+        return view('profile.password', ['alert' => 'success', 'mensagem'=> "Senha Correta",'user' => $user, 'pagina' => 'profile']);
     }
 }
