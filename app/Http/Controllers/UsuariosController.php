@@ -80,15 +80,19 @@ class UsuariosController extends Controller
 
         return redirect()->route('home');
     }
+
     public function profile(Request $request){
         return view('profile.index', ['pagina' => 'profile']);
     }
-    public function profileEdit(Request $request){
-        return view('profile.edit', ['pagina' => 'profile']);
+
+    public function profileEdit(Usuario $user){
+        return view('profile.edit', ['user' => $user, 'pagina' => 'profile']);
     }
+
     public function profilePassword(Usuario $user){
         return view('profile.password', ['user' => $user, 'pagina' => 'profile']);
     }
+
     public function profileUpdatePassword(Request $form){
         $user = Auth::user();
         if(Hash::check($form->password,$user->password)){
@@ -104,6 +108,15 @@ class UsuariosController extends Controller
             return view('profile.password', ['alert' => 'danger','mensagem'=> "Senha Atual Incorreta",'user' => $user, 'pagina' => 'profile']);
         }
 
-        return view('profile.password', ['alert' => 'success', 'mensagem'=> "Senha Correta",'user' => $user, 'pagina' => 'profile']);
+        return view('profile.password', ['alert' => 'success', 'mensagem'=> "Senha Alterada",'user' => $user, 'pagina' => 'profile']);
+    }
+    public function profileUpdateProfile(Request $form){
+        $user = Auth::user();
+        $user->name = $form->nome;
+        $user->email = $form->email;
+        $user->save();
+        
+
+        return view('profile.index', ['pagina' => 'profile']);
     }
 }

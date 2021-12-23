@@ -50,7 +50,7 @@ Route::get('/profile', [UsuariosController::class, 'profile'])->name('profile.in
 Route::get('/profile/edit', [UsuariosController::class, 'profileEdit'])->name('profile.edit');
 Route::get('/profile/password', [UsuariosController::class, 'profilePassword'])->name('profile.password');
 Route::put('/profile/updatePassword', [UsuariosController::class, 'profileUpdatePassword'])->name('profile.updatePassword');
-
+Route::put('/profile/updateProfile', [UsuariosController::class, 'profileUpdateProfile'])->name('profile.updateProfile');
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email', ['pagina' => 'verify-email']);

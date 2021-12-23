@@ -22,8 +22,8 @@
         <div class="text-end">
         
           @if (Auth::user())
-          <a href="{{route('profile.index')}}" class="nav-link">Olá, {{ Auth::user()->username }}!</a>
-            <a href="{{ route('logout') }}" role="button" class="btn btn-outline-danger">Sair</a>
+          <a style="display:inline" href="{{route('profile.index')}}" class="nav-link">Olá, {{ Auth::user()->username }}!</a>
+            <a style="display:inline" href="{{ route('logout') }}" role="button" class="btn btn-outline-danger">Sair</a>
           @else
             <a href="{{ route('login') }}" role="button" class="btn btn-outline-light me-2">Login</a>
             <a href="{{ route('usuarios.inserir') }}" role="button" class="btn btn-warning">Cadastro</a>

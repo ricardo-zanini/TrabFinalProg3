@@ -18,6 +18,7 @@ class CreateProdutosTable extends Migration
             $table->string('nome', 255);
             $table->decimal('preco', 8, 2);
             $table->text('descricao');
+            $table->string('imagem', 255);
         });
     }
 
