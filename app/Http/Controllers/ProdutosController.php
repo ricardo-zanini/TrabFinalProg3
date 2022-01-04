@@ -67,4 +67,14 @@ class ProdutosController extends Controller
         return redirect()->route('produtos');
     }
 
+    public function recortar(Produto $prod)
+    {
+        
+        return view('produtos.recortar', ['prod' => $prod, 'pagina' => 'produtos']);
+    }
+
+    public function updateRecortar(Produto $prod)
+    {
+        return view('produtos.recortar', ['prod' => $prod, 'pagina' => 'produtos']);
+    }
 }
