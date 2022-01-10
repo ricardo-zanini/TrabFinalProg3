@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProdutosController extends Controller
 {
@@ -69,12 +70,16 @@ class ProdutosController extends Controller
 
     public function recortar(Produto $prod)
     {
-        
         return view('produtos.recortar', ['prod' => $prod, 'pagina' => 'produtos']);
     }
 
-    public function updateRecortar(Produto $prod)
+    public function updateRecortar(Produto $prod, Request $request)
     {
+        if($request->isMethod('POST')){
+            $valores = explode(",", $request->img);
+            $valores = base64_decode($valores[1]);
+            Storage::disk('imagens')->put($prod->imagem, $valores);
+        }
         return view('produtos.recortar', ['prod' => $prod, 'pagina' => 'produtos']);
     }
 }

@@ -1,7 +1,8 @@
 @extends('templates.base')
 
 @push('styles')
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css'></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" media="screen" />
 @endpush
 @push('scripts')
     <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.js'></script>
@@ -14,7 +15,7 @@
 @section('content')
 <form action="{{route('produtos.updateRecortar', $prod)}}" method="post" id="cortar">
     @csrf
-    <input type="hidden"  name="img" id="img">
+    <input type="hidden" name="img" id="img">
     <p>
         <input type="submit" value="Cortar" class="btn btn-primary">
     </p>

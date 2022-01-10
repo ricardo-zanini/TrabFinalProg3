@@ -29,7 +29,7 @@ Route::post('/produtos/inserir', [ProdutosController::class, 'insert'])->name('p
 
 Route::get('/produtos/recortar/{prod}',[ProdutosController::class,'recortar'])->name('produtos.recortar');
 
-Route::put('/produtos/recortar/{prod}',[ProdutosController::class,'updateRecortar'])->name('produtos.updateRecortar');
+Route::post('/produtos/recortar/{prod}',[ProdutosController::class,'updateRecortar'])->name('produtos.updateRecortar');
 
 Route::get('/produtos/{prod}', [ProdutosController::class, 'show'])->name('produtos.show');
 
