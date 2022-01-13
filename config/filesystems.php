@@ -59,6 +59,14 @@ return [
             'visibility' => 'public',
            ],
 
+        //-------- Geração do caminho para armazenamento de imagens de Galeria de posts --------
+
+        'imagensGaleria' => [
+            'driver' => 'local',
+            'root' => storage_path('imagensGaleria'),
+            'url' => env('APP_URL').'/galeria',
+            'visibility' => 'public',
+        ],
     ],
 
     /*
@@ -74,7 +82,11 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('img') => storage_path('imagens')
+        public_path('img') => storage_path('imagens'),
+
+        //-------- Link para a pasta galeria --------
+
+        public_path('galeria') => storage_path('imagensGaleria')
     ],
 
 ];

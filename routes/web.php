@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\GaleriaController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home', ['pagina' => 'home']);
 })->name('home');
+
+//-------------------------- Rotas de Galeria -------------------------------
+
+// Rota inicial para apresentação de posts inseridos
+Route::get('/galeriaindex', [GaleriaController::class, 'index'])->name('galeria.index');
+// Rota para insercao de post na galeria
+Route::get('/galeria/inserir', [GaleriaController::class, 'inserir'])->name('galeria.inserir');
+// Gravação dos dados no banco recebidos do submit
+Route::post('/galeria/gravar', [GaleriaController::class, 'gravar'])->name('galeria.gravar');
+// Rota de apresentação de post especifico
+Route::get('/galeria/show/{imagem}', [GaleriaController::class, 'show'])->name('galeria.show');
+
+//----------------------------------------------------------------------------
 
 Route::get('produtos', [ProdutosController::class, 'index'])->middleware('auth')->name('produtos');
 
