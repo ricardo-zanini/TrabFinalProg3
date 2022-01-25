@@ -21,6 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home', ['pagina' => 'home']);
 })->name('home');
+// --------------------- Novas Rotas -------------------
+
+//--------
+//-------
 
 //-------------------------- Rotas de Galeria -------------------------------
 
@@ -98,3 +102,4 @@ Route::get('/login', [UsuariosController::class, 'login'])->name('login');
 Route::post('/login', [UsuariosController::class, 'login']);
 
 Route::get('/logout', [UsuariosController::class, 'logout'])->name('logout');
+
