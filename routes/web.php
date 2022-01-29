@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\GaleriaController;
+use App\Http\Controllers\ForumController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,8 +24,13 @@ Route::get('/', function () {
 })->name('home');
 // --------------------- Novas Rotas -------------------
 
-//--------
-//-------
+Route::get('/foruns', [ForumController::class, 'index'])->middleware('auth')->name('forum.index');
+Route::get('/foruns/forum', [ForumController::class, 'forum'])->middleware('auth')->name('forum.forum');
+Route::get('/foruns/novidades', [ForumController::class, 'novidades'])->middleware('auth')->name('forum.novidades');
+Route::get('/foruns/novoForum', [ForumController::class, 'novoForum'])->middleware('auth')->name('forum.novoForum');
+Route::post('/forum/gravar', [ForumController::class, 'gravarForum'])->middleware('auth')->name('forum.gravar');
+
+Route::get('/usuario/cadastro', [UsuariosController::class, 'cadastro'])->name('usuarios.cadastro');
 
 //-------------------------- Rotas de Galeria -------------------------------
 

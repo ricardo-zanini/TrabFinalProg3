@@ -24,19 +24,26 @@ class UsuariosController extends Controller
 
     public function insert(Request $form)
     {
-        $usuario = new Usuario();
+        if($form->password === $form->repeatPassword ){
+            $usuario = new Usuario();
+            $imagem = $form->file('imagem')->store('', 'imagensUsuario');
+            $usuario->name = $form->name;
+            $usuario->email = $form->email;
+            $usuario->username = $form->username;
+            $usuario->password = Hash::make($form->password);
+            $usuario->description = $form->description;
+            $usuario->image = $imagem;
 
-        $usuario->name = $form->nome;
-        $usuario->email = $form->email;
-        $usuario->username = $form->usuario;
-        $usuario->password = Hash::make($form->senha);
+            $usuario->save();
+            event(new Registered($usuario));
+            
+            Auth::login($usuario);
 
-        $usuario->save();
-        event(new Registered($usuario));
-        
-        Auth::login($usuario);
-
-        return redirect()->route('verification.notice');
+            return redirect()->route('login');
+        }else{
+        return redirect()->route('usuarios.cadastro')->with('erro', 'Usuário ou
+            senha inválidos.');
+        }
     }
 
     // Ações de login
@@ -48,7 +55,7 @@ class UsuariosController extends Controller
             // Se um dos campos não for preenchidos, nem tenta o login e volta
             // para a página anterior
             $credenciais = $form->validate([
-            'username' => ['required'],
+            'email' => ['required'],
             'password' => ['required'],
             ]);
 
@@ -118,5 +125,10 @@ class UsuariosController extends Controller
         
 
         return view('profile.index', ['pagina' => 'profile']);
+    }
+
+
+    public function cadastro(){
+        return view('usuarios.cadastro', ['pagina' => 'usuarios']);
     }
 }

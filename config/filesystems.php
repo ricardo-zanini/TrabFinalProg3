@@ -67,6 +67,18 @@ return [
             'url' => env('APP_URL').'/galeria',
             'visibility' => 'public',
         ],
+        'imagensForum' => [
+            'driver' => 'local',
+            'root' => storage_path('imagensForum'),
+            'url' => env('APP_URL').'/forum',
+            'visibility' => 'public',
+        ],
+        'imagensUsuario' => [
+            'driver' => 'local',
+            'root' => storage_path('imagensUsuario'),
+            'url' => env('APP_URL').'/usuario',
+            'visibility' => 'public',
+        ]
     ],
 
     /*
@@ -86,7 +98,9 @@ return [
 
         //-------- Link para a pasta galeria --------
 
-        public_path('galeria') => storage_path('imagensGaleria')
+        public_path('galeria') => storage_path('imagensGaleria'),
+        public_path('forum') => storage_path('imagensForum'),
+        public_path('usuario') => storage_path('imagensUsuario')
     ],
 
 ];
