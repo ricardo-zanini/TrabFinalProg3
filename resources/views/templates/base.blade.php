@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/wtf-forms.css" rel="stylesheet">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
 <style>
 body{
     font-family: 'Outfit', sans-serif !important;
@@ -43,6 +48,56 @@ body{
             background-color:#a5e1e0 !important;
             border:0 !important
             }
+.linkHeader{
+    height:100%;
+    width:fit-content;
+}
+.linkForum{
+  text-decoration:none;
+}
+.opcoesHeader {
+  width: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.opcoesHeader div {
+  cursor:pointer;
+  margin-right: 30px;
+  color: #222222;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  padding: 0 15px;
+  border-bottom: solid 1px #037b79;
+}
+.forumNavEsquerda img {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+  border-radius: 2px;
+  background-color: #eeeeee;
+}
+.fundoNavEsquerda{
+        overflow-y:auto;
+        overflow-x:hidden;
+        background-color:#d8d8d8;
+        height:100vh;
+        min-width:330px;
+    }
 </style>
     <script>
         function attNomeArquivo(){

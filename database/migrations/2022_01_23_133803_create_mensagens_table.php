@@ -17,6 +17,7 @@ class CreateMensagensTable extends Migration
             $table->id();
             $table->integer('id_usuario');
             $table->integer('id_forum');
+            $table->integer('id_usuario_resposta');
             $table->string('mensagem', 2000);
             $table->string('imagem', 255);
             $table->integer('numero_likes');

@@ -65,7 +65,7 @@ class UsuariosController extends Controller
                 session()->regenerate();
 
 
-                return redirect()->route('home');
+                return redirect()->route('forum.index');
             }
             else
             {

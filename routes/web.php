@@ -25,7 +25,7 @@ Route::get('/', function () {
 // --------------------- Novas Rotas -------------------
 
 Route::get('/foruns', [ForumController::class, 'index'])->middleware('auth')->name('forum.index');
-Route::get('/foruns/forum', [ForumController::class, 'forum'])->middleware('auth')->name('forum.forum');
+Route::get('/foruns/forum/{forum}', [ForumController::class, 'forum'])->middleware('auth')->name('forum.forum');
 Route::get('/foruns/novidades', [ForumController::class, 'novidades'])->middleware('auth')->name('forum.novidades');
 Route::get('/foruns/novoForum', [ForumController::class, 'novoForum'])->middleware('auth')->name('forum.novoForum');
 Route::post('/forum/gravar', [ForumController::class, 'gravarForum'])->middleware('auth')->name('forum.gravar');

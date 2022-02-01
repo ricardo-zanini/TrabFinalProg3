@@ -22,6 +22,7 @@ body{
           flex-direction: column;
   max-height: 100vh;
   width: 300px;
+  min-height:100vh;
   padding-top: 70px;
   background-color: #f7f7f7;
 }
@@ -201,7 +202,7 @@ body{
 }
 
 .opcoesUser img {
-  width: 30px;
+  width: 20px;
   margin-right: 20px;
 }
 
@@ -453,55 +454,83 @@ body{
     
     <!---------------------------- Header ------------------------------->
     
-    <div class = "header">
-        <div class = "containerLogo">
-           <img class = "logo" src="{{asset('Imagens/cat.svg')}}"/>
-           <span class = "tituloLogo"></span>
-        </div>
-        <div class = "opcoesHeader">
-           <div>
-             Novidades
-           </div>
-           <div>
-            Perfil
-          </div>
-          <div>
-            Fóruns
-          </div>
-        </div>
-        <div class = "opcoesUser">
-          <img src="{{asset('Imagens/star.svg')}}"/>
-          <img src="{{asset('Imagens/plus.svg')}}"/>
-          <img class="iconeUserHeader" src="{{asset('Imagens/gato.jpg')}}"/>
-        </div>
+    <div class="header">
+    <div class="containerLogo">
+    <a href="{{route('forum.index') }}"><img class="logo" src="{{asset('Imagens/cat.svg')}}" /></a>
+      <span class="tituloLogo"></span>
     </div>
+    <div class="opcoesHeader">
+      <a class="linkForum linkHeader"href="{{route('forum.novidades') }}"><div>
+       Novidades
+      </div>
+    </a>
+      <div>
+        Perfil
+      </div>
+      <a class="linkForum linkHeader" href="{{route('forum.index') }}"><div style="color: #00beba">
+       Fóruns
+      </div>
+      </a>
+    </div>
+    <div class="opcoesUser">
+      <a href="{{route('forum.novoForum') }}"><img src="../../Imagens/star.svg"/></a>
+      <a href="{{route('forum.novoForum') }}"><img src="{{asset('Imagens/plus.svg')}}" /></a>
+      <img class="iconeUserHeader" src="{{asset('usuario/' . Auth::user()->image)}}" />
+    </div>
+  </div>
+
 
     <!---------------------------- Menu Esquerda ------------------------------->
+    <div class="fundoNavEsquerda">
+  <div class="navEsquerda">
+  @if (!$favoritos->isEmpty())
+    <div class="navEsquerdaCategoria">
+      Favoritos
+    </div>
+    <div class="filhosnavEsquerda">
+      @foreach($favoritos as $favorito)
+      <a class="linkForum" href="{{route('forum.forum', $favorito) }}">
+        <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
+          <div>Fórum teste {{$favorito->nome}}</div>
+        </div>
+      </a>
+      @endforeach
+    </div>
+    @endif
 
-   <div class = "navEsquerda">
-       <div class = "navEsquerdaCategoria">
-          Favoritos
-       </div>
-       <div class = "filhosnavEsquerda">
-        <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-        <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-      </div>
-       <div class = "navEsquerdaCategoria">
-          Recentes
-       </div>
-       <div class = "filhosnavEsquerda">
-          <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-          <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-       </div>
-       <div class = "navEsquerdaCategoria">
-          Mais Acessados
-       </div>
-       <div class = "filhosnavEsquerda">
-        <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-        <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-      </div>
-   </div>
 
+    @if (!$recentes->isEmpty())
+    <div class="navEsquerdaCategoria">
+      Recentes
+    </div>
+    <div class="filhosnavEsquerda">
+      @foreach($recentes as $recente)
+      <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
+        <div>Fórum teste {{$recente->nome}}</div>
+      </div>
+      @endforeach
+    </div>
+    @endif
+
+
+    @if (!$novosForuns->isEmpty())
+    <div class="navEsquerdaCategoria">
+      Novos Fóruns
+    </div>
+    <div class="filhosnavEsquerda">
+      @foreach($novosForuns as $novoForum)
+      <a class="linkForum" href="{{route('forum.forum', $novoForum) }}">
+        <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
+          <div>Fórum teste {{$novoForum->nome}}</div>
+        </div>
+      </a>
+      @endforeach
+    </div>
+    @endif
+
+
+  </div>
+  </div>
    <!---------------------------- Conteúdo Principal ------------------------------->
 
    <div class = "paiMain">
@@ -589,12 +618,15 @@ body{
       <div class="divisoria"></div>
 
         <!---------------------------- Escrever mensagem ------------------------------->
-
-        <div class = "containerMensagemUser">
-          <input type="text" class="form-control" id="mensagemUser" aria-describedby="mensagem" placeholder="Digite uma mensagem"/>
-          <img src = "{{asset('Imagens/clip.svg')}}"/>
-          <button class="btn btn-primary">Enviar</button>
-        </div>
+        <form method="post" action="{{route('forum.gravar')}}" enctype="multipart/form-data">
+            <div class = "containerMensagemUser">
+        
+            <input type="text" class="form-control" id="mensagemUser" aria-describedby="mensagem" placeholder="Digite uma mensagem"/>
+            <img  style="cursor:pointer;" src = "{{asset('Imagens/clip.svg')}}"/>
+            <button class="btn btn-primary">Enviar</button>
+            
+            </div>
+        </form>
     </div>
   </div>
 

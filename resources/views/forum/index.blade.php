@@ -49,7 +49,7 @@
           justify-content: center;
   padding-top: 70px;
   padding-bottom: 80px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23000000' fill-opacity='0.07' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E");
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23000000' fill-opacity='0.07' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E"); */
 }
 
 .header {
@@ -83,35 +83,6 @@
 
 .tituloLogo {
   margin-left: 5px;
-}
-
-.opcoesHeader {
-  width: 450px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100%;
-}
-
-.opcoesHeader div {
-  margin-right: 30px;
-  color: #222222;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-  padding: 0 15px;
-  border-bottom: solid 1px #037b79;
 }
 
 .navEsquerdaCategoria {
@@ -165,14 +136,6 @@
   background-color: #e7e7e7;
 }
 
-.forumNavEsquerda img {
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
-  border-radius: 2px;
-  background-color: #eeeeee;
-}
-
 .forumMain {
   width: 400px;
   height: 400px;
@@ -194,7 +157,7 @@
           transform: scale(1.01);
 }
 
-.forumMain:before {
+/* .forumMain:before {
   content: "";
   position: absolute;
   width: 120px;
@@ -206,13 +169,18 @@
   border-radius: 50%;
   top: -70px;
   background-size: 100%;
-}
+} */
 
 .tituloForumMain {
   margin-top: 0px;
   padding: 50px 20px 30px 20px;
+  height: 110px;
+  font-size: 1.4rem;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
   color: #ececec;
-  background-color: #037b797c;
+  background-color: #41b8b6;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E");
 }
 
@@ -220,7 +188,7 @@
   margin-top: 30px;
   padding: 20px;
   color: #474747;
-  height: 200px;
+  height: 110px;
   overflow-y: auto;
   text-align: justify;
 }
@@ -252,7 +220,7 @@
 }
 
 .opcoesUser img {
-  width: 30px;
+  width: 20px;
   margin-right: 20px;
 }
 
@@ -391,23 +359,6 @@
   z-index: 1;
 }
 
-.main {
-  background-color: #d8d8d8;
-  width: 100%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow-y: auto;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-top: 70px;
-  padding-bottom: 80px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23000000' fill-opacity='0.07' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E");
-}
 
 .header {
   display: -webkit-box;
@@ -440,35 +391,6 @@
 
 .tituloLogo {
   margin-left: 5px;
-}
-
-.opcoesHeader {
-  width: 450px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100%;
-}
-
-.opcoesHeader div {
-  margin-right: 30px;
-  color: #222222;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-  padding: 0 15px;
-  border-bottom: solid 1px #037b79;
 }
 
 .navEsquerdaCategoria {
@@ -506,33 +428,11 @@
   margin-right: 5px;
 }
 
-.forumNavEsquerda {
-  padding: 8px;
-  margin: 4px 0px;
-  padding-left: 20px;
-  color: #6d6d6d;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: no-wrap;
-      flex-wrap: no-wrap;
-  background-color: #e7e7e7;
-}
 
-.forumNavEsquerda img {
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
-  border-radius: 2px;
-  background-color: #eeeeee;
-}
 
 .forumMain {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   margin-top: 150px !important;
   background-color: #f3f3f3;
   position: relative;
@@ -551,7 +451,7 @@
           transform: scale(1.01);
 }
 
-.forumMain:before {
+/* .forumMain:before {
   content: "";
   position: absolute;
   width: 120px;
@@ -563,24 +463,7 @@
   border-radius: 50%;
   top: -70px;
   background-size: 100%;
-}
-
-.tituloForumMain {
-  margin-top: 0px;
-  padding: 50px 20px 30px 20px;
-  color: #ececec;
-  background-color: #037b797c;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E");
-}
-
-.conteudoForum {
-  margin-top: 30px;
-  padding: 20px;
-  color: #474747;
-  height: 200px;
-  overflow-y: auto;
-  text-align: justify;
-}
+} */
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -603,15 +486,7 @@
   background: #e0e0e0;
 }
 
-.opcoesUser {
-  position: absolute;
-  right: 0;
-}
 
-.opcoesUser img {
-  width: 30px;
-  margin-right: 20px;
-}
 
 .navDireita {
   min-height: 100vh;
@@ -690,6 +565,7 @@
   padding-left: 20px;
   -webkit-box-shadow: 2px 2px 1px 0.2rem #41b8b63a !important;
           box-shadow: 2px 2px 1px 0.2rem #41b8b63a !important;
+  margin-left: 10px;
 }
 
 .containerMensagemUser {
@@ -711,14 +587,66 @@
 }
 
 .containerMensagemUser button {
-  background-color: #41b8b6c2 !important;
+  background-color: #41b8b6 !important;
   border: none !important;
   border-radius: 200px !important;
   -webkit-box-shadow: 2px 2px 1px 0.2rem #41b8b63a !important;
           box-shadow: 2px 2px 1px 0.2rem #41b8b63a !important;
 }
+
 /*# sourceMappingURL=style.css.map */
     </style>
+    <script>
+      function aleatorizaNumero(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+      }
+      $(document).ready(function(){
+        var foruns = $('.forumMain');
+        for(let i = 0; i < foruns.length; i++){
+          var id = $(foruns[i]).attr('id')
+          console.log($(foruns[i]).attr('id'))
+          var imagem = $(foruns[i]).attr('data-imagem')
+          $($('style')[0]).append(`
+          #${id}:before{
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            left: calc(50% - 60px);
+            background-color: #e2e2e2;
+            -webkit-box-shadow: 0px 0px 5px 0.3px #1fa8a6;
+                    box-shadow: 0px 0px 5px 0.3px #1fa8a6;
+            border-radius: 50%;
+            top: -70px;
+            background-size: 100%;
+            background-image: url("${imagem}");
+            background-size:cover;
+          }
+          
+          `)
+        }
+        //---------- Aleatoriza cores ----------
+        
+
+        var mains = $('.forumMain');
+          for(let i = 0; i< mains.length; i++){
+              $(mains[i]).find('.tituloForumMain').css({'background-color':'hsl(179, ' + aleatorizaNumero(30,60) + '%, ' + aleatorizaNumero(40,60) + '%)'})
+          }
+
+      })
+      function pesquisaForuns(elemento){
+          var mains = $('.forumMain');
+          for(let i = 0; i< mains.length; i++){
+            if($(mains[i]).find('.tituloForumMain').text().toLowerCase().includes(elemento.val().toLowerCase())){
+              $(mains[i]).css({'display':'block'})
+            }
+            else{
+              $(mains[i]).css({'display':'none'})
+            }
+            console.log(elemento.val().toLowerCase())
+          }
+      }
+    </script>
 @endpush
 
 @section('content')
@@ -727,133 +655,106 @@
 
   <div class="header">
     <div class="containerLogo">
-      <img class="logo" src="{{asset('Imagens/cat.svg')}}" />
+    <a href="{{route('forum.index') }}"><img class="logo" src="{{asset('Imagens/cat.svg')}}" /></a>
       <span class="tituloLogo"></span>
     </div>
     <div class="opcoesHeader">
-      <div>
-        Novidades
+      <a class="linkForum linkHeader"href="{{route('forum.novidades') }}"><div>
+       Novidades
       </div>
+    </a>
       <div>
         Perfil
       </div>
-      <div>
-        Fóruns
+      <a class="linkForum linkHeader" href="{{route('forum.index') }}"><div style="color: #00beba">
+       Fóruns
       </div>
+      </a>
     </div>
     <div class="opcoesUser">
-      <img src="{{asset('Imagens/plus.svg')}}" />
-      <img class="iconeUserHeader" src="{{asset('Imagens/gato.jpg')}}" />
+      <a href="{{route('forum.novoForum') }}"><img src="{{asset('Imagens/plus.svg')}}" /></a>
+      <img class="iconeUserHeader" src="{{asset('usuario/' . Auth::user()->image)}}" />
     </div>
   </div>
 
   <!---------------------------- Menu Esquerda ------------------------------->
-
+  <div class="fundoNavEsquerda">
   <div class="navEsquerda">
+  @if (!$favoritos->isEmpty())
     <div class="navEsquerdaCategoria">
       Favoritos
     </div>
     <div class="filhosnavEsquerda">
-      <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
-        <div>Fórum teste</div>
-      </div>
-      <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
-        <div>Fórum teste</div>
-      </div>
+      @foreach($favoritos as $favorito)
+      <a class="linkForum" href="{{route('forum.forum', $favorito) }}">
+        <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
+          <div>Fórum teste {{$favorito->nome}}</div>
+        </div>
+      </a>
+      @endforeach
     </div>
+    @endif
+
+
+    @if (!$recentes->isEmpty())
     <div class="navEsquerdaCategoria">
       Recentes
     </div>
     <div class="filhosnavEsquerda">
+      @foreach($recentes as $recente)
       <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
-        <div>Fórum teste</div>
+        <div>Fórum teste {{$recente->nome}}</div>
       </div>
-      <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
-        <div>Fórum teste</div>
-      </div>
+      @endforeach
     </div>
+    @endif
+
+
+    @if (!$novosForuns->isEmpty())
     <div class="navEsquerdaCategoria">
-      Mais Acessados
+      Novos Fóruns
     </div>
     <div class="filhosnavEsquerda">
-      <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
-        <div>Fórum teste</div>
-      </div>
-      <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
-        <div>Fórum teste</div>
-      </div>
+      @foreach($novosForuns as $novoForum)
+      <a class="linkForum" href="{{route('forum.forum', $novoForum) }}">
+        <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
+          <div>Fórum teste {{$novoForum->nome}}</div>
+        </div>
+      </a>
+      @endforeach
     </div>
-  </div>
+    @endif
 
+
+  </div>
+  </div>
   <!---------------------------- Conteúdo principal ------------------------------->
   <div class="paiMain">
     <div class="main">
       <!---------------------------- Buscar ------------------------------->
 
       <div class="containerMensagemUser">
-        <input type="text" class="form-control" id="mensagemUser" aria-describedby="mensagem"
+        <input onkeyup="pesquisaForuns($('#mensagemUser'))" type="text" class="form-control" id="mensagemUser" aria-describedby="mensagem"
           placeholder="Procure por um fórum" />
-        <button class="btn btn-primary">Buscar</button>
+       
       </div>
-      <div class="forumMain">
+     
 
         <!---------------------------- Fóruns ------------------------------->
 
-        <h3 class="tituloForumMain"> Um título de teste</h3>
+    @foreach($foruns as $forum)
+    <div class="forumMain" id="forumId{{$forum->id}}" data-imagem="{{'forum/' . $forum->imagem_forum}}">
+    <a class="linkForum" href="{{route('forum.forum', $forum) }}">
+        <h3 class="tituloForumMain">{{$forum->nome}}</h3>
         <div class="conteudoForum">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum.
+        {{$forum->descricao}}
         </div>
-      </div>
-      <div class="forumMain">
-        <h3 class="tituloForumMain"> Um título de teste</h3>
-        <div class="conteudoForum">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum.
-        </div>
-      </div>
-      <div class="forumMain">
-        <h3 class="tituloForumMain"> Um título de teste</h3>
-        <div class="conteudoForum">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum.
-        </div>
-      </div>
-      <div class="forumMain">
-        <h3 class="tituloForumMain"> Um título de teste</h3>
-        <div class="conteudoForum">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum.
-        </div>
-      </div>
-      <div class="forumMain">
-        <h3 class="tituloForumMain"> Um título de teste</h3>
-        <div class="conteudoForum">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum.
-        </div>
-      </div>
+        </a>
     </div>
+    @endforeach
+     
+    
+    
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

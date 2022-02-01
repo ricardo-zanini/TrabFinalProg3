@@ -14,6 +14,7 @@ class CreateForunsAcessadosTable extends Migration
     public function up()
     {
         Schema::create('foruns_acessados', function (Blueprint $table) {
+            $table->id();
             $table->integer('id_usuario');
             $table->integer('id_forum');
         });

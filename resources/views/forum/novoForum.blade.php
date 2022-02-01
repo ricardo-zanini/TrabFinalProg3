@@ -22,7 +22,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     height: 100vh;
-    width: 300px;
+    width: calc(100% - 40px);
     padding-top: 70px;
     background-color: #f7f7f7;
     }
@@ -202,7 +202,7 @@
     }
 
     .opcoesUser img {
-    width: 30px;
+    width: 20px;
     margin-right: 20px;
     }
 
@@ -506,53 +506,80 @@
 
         <!---------------------------- Header ------------------------------->
 
-        <div class = "header">
-            <div class = "containerLogo">
-            <img class = "logo" src="{{asset('Imagens/cat.svg')}}"/>
-            <span class = "tituloLogo"></span>
-            </div>
-            <div class = "opcoesHeader">
-            <div>
-                Novidades
-            </div>
-            <div>
-                Perfil
-            </div>
-            <div>
-                Fóruns
-            </div>
-            </div>
-            <div class = "opcoesUser">
-           
-            <img class="iconeUserHeader" src="{{asset('Imagens/gato.jpg')}}"/>
-            </div>
-        </div>
-
-        <!---------------------------- Menu Esquerda ------------------------------->
-
-    <div class = "navEsquerda">
-        <div class = "navEsquerdaCategoria">
-            Favoritos
-        </div>
-        <div class = "filhosnavEsquerda Favoritos">
-            <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-            <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-        </div>
-        <div class = "navEsquerdaCategoria">
-            Recentes
-        </div>
-        <div class = "filhosnavEsquerda Recentes">
-            <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-            <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-        </div>
-        <div class = "navEsquerdaCategoria">
-            Mais Acessados
-        </div>
-        <div class = "filhosnavEsquerda MaisAcessados">
-            <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-            <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}"/> <div>Fórum teste</div></div>
-        </div>
+        
+        <div class="header">
+    <div class="containerLogo">
+    <a href="{{route('forum.index') }}"><img class="logo" src="{{asset('Imagens/cat.svg')}}" /></a>
+      <span class="tituloLogo"></span>
     </div>
+    <div class="opcoesHeader">
+      <div>
+        Novidades
+      </div>
+      <div>
+        Perfil
+      </div>
+      <a class="linkForum linkHeader" href="{{route('forum.index') }}"><div style="color: #00beba">
+       Fóruns
+      </div>
+      </a>
+    </div>
+    <div class="opcoesUser">
+      <a href="{{route('forum.novoForum') }}"><img src="{{asset('Imagens/plus.svg')}}" /></a>
+      <img class="iconeUserHeader" src="{{asset('usuario/' . Auth::user()->image)}}" />
+    </div>
+  </div>
+        <!---------------------------- Menu Esquerda ------------------------------->
+        <div class="fundoNavEsquerda">
+  <div class="navEsquerda">
+  @if (!$favoritos->isEmpty())
+    <div class="navEsquerdaCategoria">
+      Favoritos
+    </div>
+    <div class="filhosnavEsquerda">
+      @foreach($favoritos as $favorito)
+      <a class="linkForum" href="{{route('forum.forum', $favorito) }}">
+        <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
+          <div>Fórum teste {{$favorito->nome}}</div>
+        </div>
+      </a>
+      @endforeach
+    </div>
+    @endif
+
+
+    @if (!$recentes->isEmpty())
+    <div class="navEsquerdaCategoria">
+      Recentes
+    </div>
+    <div class="filhosnavEsquerda">
+      @foreach($recentes as $recente)
+      <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
+        <div>Fórum teste {{$recente->nome}}</div>
+      </div>
+      @endforeach
+    </div>
+    @endif
+
+
+    @if (!$novosForuns->isEmpty())
+    <div class="navEsquerdaCategoria">
+      Novos Fóruns
+    </div>
+    <div class="filhosnavEsquerda">
+      @foreach($novosForuns as $novoForum)
+      <a class="linkForum" href="{{route('forum.forum', $novoForum) }}">
+        <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
+          <div>Fórum teste {{$novoForum->nome}}</div>
+        </div>
+      </a>
+      @endforeach
+    </div>
+    @endif
+
+
+  </div>
+  </div>
 
     <!---------------------------- Conteúdo Principal ------------------------------->
 
