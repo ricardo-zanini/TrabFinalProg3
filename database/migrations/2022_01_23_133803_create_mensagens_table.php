@@ -17,9 +17,9 @@ class CreateMensagensTable extends Migration
             $table->id();
             $table->integer('id_usuario');
             $table->integer('id_forum');
-            $table->integer('id_usuario_resposta');
-            $table->string('mensagem', 2000);
-            $table->string('imagem', 255);
+            $table->integer('id_usuario_resposta')->nullable();;
+            $table->string('mensagem', 2000)->nullable();;
+            $table->string('imagem', 255)->nullable();;
             $table->integer('numero_likes');
             $table->timestamp('data_envio')->default(DB::raw('CURRENT_TIMESTAMP'));
         });

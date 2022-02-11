@@ -58,26 +58,38 @@ class ForumController extends Controller
             'foruns' => $foruns,'pagina' => 'forum'
         ]);
     }
-    public function forum(forum $forumAtual)
+    public function forum($forum, forum $forumAtual)
     {
         
         $mensagens = 
         DB::table('mensagens')
         ->orderBy('mensagens.id', 'asc')
         ->join('usuarios', 'mensagens.id_usuario', '=', 'usuarios.id')
-        ->where('mensagens.id_forum', $forumAtual->id)
+        ->where('mensagens.id_forum', $forum)
         ->get();
-
+        
+        $favorito = 
+        DB::table('foruns_favoritos')
+        ->where('id_forum', $forum)
+        ->where('id_usuario', Auth::user()->id)
+        ->get();
 
         list($favoritos, $recentes, $novosForuns) =  $this->retornaForuns();
 
         return view('forum.forum', [
+            'forum' => $forum,
             'favoritos' => $favoritos,
+            'favorito' => $favorito,
             'novosForuns' => $novosForuns,
             'recentes' => $recentes,
             'mensagens' => $mensagens,
             'pagina' => 'forum'
         ]);
+    }
+    public function likeComentario($mensagem)
+    {
+        
+       
     }
     public function novidades()
     {
@@ -97,6 +109,46 @@ class ForumController extends Controller
             'pagina' => 'forum'
         ]);
     }
+    public function mensagemGravar(Request $form)
+    {
+        $mensagens = new mensagens();
+        if(!$form->imagem == ''){
+             $imagem = $form->file('imagem')->store('', 'imagensMensagens');
+             $mensagens->imagem = $imagem;
+        }
+        if(!$form->mensagem == ''){
+            $mensagens->mensagem = $form->mensagem;
+        }
+        $mensagens->id_usuario = Auth::user()->id;
+        $mensagens->id_forum = $form->idForum;
+        $mensagens->numero_likes = 0;
+
+        $mensagens->save();
+
+        return redirect()->route('forum.forum', ['forum' => $form->idForum]);
+    }
+    
+    public function favoritarForum($forum, foruns_favoritos $foruns_favoritos)
+    {
+        $favorito = 
+        DB::table('foruns_favoritos')
+        ->where('id_forum', $forum)
+        ->where('id_usuario', Auth::user()->id)
+        ->get();
+        if($favorito->isEmpty()){
+            $foruns_favoritos->id_forum = $forum;
+            $foruns_favoritos->id_usuario = Auth::user()->id;
+
+            $foruns_favoritos->save();
+        }else{
+            DB::table('foruns_favoritos')
+            ->where('id_forum', $forum)
+            ->where('id_usuario', Auth::user()->id)->delete();
+        }
+
+        return redirect()->route('forum.forum', ['forum' => $forum]);
+    }
+
     public function gravarForum(Request $form)
     {
         $forum = new forum();

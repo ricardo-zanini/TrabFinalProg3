@@ -78,6 +78,12 @@ return [
             'root' => storage_path('imagensUsuario'),
             'url' => env('APP_URL').'/usuario',
             'visibility' => 'public',
+        ],
+        'imagensMensagens' => [
+            'driver' => 'local',
+            'root' => storage_path('imagensMensagens'),
+            'url' => env('APP_URL').'/mensagens',
+            'visibility' => 'public',
         ]
     ],
 
@@ -100,7 +106,8 @@ return [
 
         public_path('galeria') => storage_path('imagensGaleria'),
         public_path('forum') => storage_path('imagensForum'),
-        public_path('usuario') => storage_path('imagensUsuario')
+        public_path('usuario') => storage_path('imagensUsuario'),
+        public_path('mensagens') => storage_path('imagensMensagens')
     ],
 
 ];

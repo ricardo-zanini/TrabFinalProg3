@@ -307,7 +307,7 @@ body{
 }
 
 .divisoria {
-  height: 3px;
+  height: 1px;
   padding: 0.5px;
   background-color: #00000036;
   width: calc(100% - 20px);
@@ -446,8 +446,78 @@ body{
   bottom: 0;
   background-color: #1fa8a66c;
 }
+
+.fileMensagem{
+  display:none;
+}
+.containerNomeArquivo{
+  display:flex;
+  align-items:center;
+  position:absolute;
+  left:0px;
+  top:-40px;
+  color:black;
+  width:100%;
+}
+.iconeImagemMensagem{
+  width:20px !important;
+  margin-right:10px;
+  opacity:0.6;
+}
+.nomeArquivo{
+  display:flex;
+  align-items:center;
+  background-color:#65c0be;
+  border-radius:200px;
+  color:white;
+  padding:5px;
+  padding-left:10px;
+  transition:0.5s;
+  max-width: 50%;
+}
+.nomeArquivo>span{
+  max-width:300px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.iconeExcluirImagem{
+  width:20px !important;
+  margin-left:10px;
+  opacity:0.6;
+  filter:brightness(100%) invert(100%);
+  cursor:pointer;
+}
 /*# sourceMappingURL=styleForum.css.map */
 </style>
+<script>
+  function executaSelecaoImagem(){
+    $('#fileMensagem').click()
+  }
+
+  function mostraValorImagem(){
+    var valorImagem = $('#fileMensagem').val().split('\\')[$('#fileMensagem').val().split('\\').length - 1];
+    $('.containerMensagemUser').prepend(`
+      <div class="containerNomeArquivo">
+        <div class="nomeArquivo">
+          <img class="iconeImagemMensagem" src="{{asset('Imagens/clip.svg')}}" />
+          <span>${valorImagem}</span>
+          <img onclick="limpaImagem()" class="iconeExcluirImagem" src="{{asset('Imagens/excluir.svg')}}" />
+        </div>
+      </div>
+      
+     `)
+  }
+  function limpaImagem(){
+    $('#fileMensagem').val('')
+    $('.containerNomeArquivo').remove()
+  }
+  function validacaoMensagem(e){
+    if($('#mensagemUser').val() === '' && $('#fileMensagem').val() === ''){
+        e.preventDefault();
+    }
+  }
+</script>
 @endpush
 
 @section('content')
@@ -473,7 +543,8 @@ body{
       </a>
     </div>
     <div class="opcoesUser">
-      <a href="{{route('forum.novoForum') }}"><img src="../../Imagens/star.svg"/></a>
+    <a href="{{route('forum.favoritarForum', $forum) }}"><img src="@if (!$favorito->isEmpty()) ../../Imagens/coracaoPreenchido.svg @else ../../Imagens/coracao.svg @endif "/></a>
+      
       <a href="{{route('forum.novoForum') }}"><img src="{{asset('Imagens/plus.svg')}}" /></a>
       <img class="iconeUserHeader" src="{{asset('usuario/' . Auth::user()->image)}}" />
     </div>
@@ -489,7 +560,7 @@ body{
     </div>
     <div class="filhosnavEsquerda">
       @foreach($favoritos as $favorito)
-      <a class="linkForum" href="{{route('forum.forum', $favorito) }}">
+      <a class="linkForum" href="{{route('forum.forum', $favorito->id_forum) }}">
         <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
           <div>Fórum teste {{$favorito->nome}}</div>
         </div>
@@ -536,95 +607,73 @@ body{
    <div class = "paiMain">
     <div class = "main">
 
-      <!---------------------------- Mensagem ------------------------------->
-        <div class = "usuario">
-            <img src="{{asset('Imagens/cat.svg')}}"/>
-            <div class = "nomeUsuario">Meu Nome De usuário</div>
-        </div>
-        <div class="conteudoImagem">
-            <img class = "imagemMensagem" src="{{asset('Imagens/gato.jpg')}}"/>
-            <div class = "detalhesMensagem">
-              <div class = "horarioEnvio">Hoje - 11:23</div>
-              <div class = "likesPai"><img class = "like" src = "{{asset('Imagens/like.svg')}}"/><div class ="numeroLikes">99</div></div>
-            </div>
-        </div>
-
-        <div class="divisoria"></div>
-
-        <!---------------------------- Mensagem ------------------------------->
-
-        <div class = "usuario">
-            <img src="{{asset('Imagens/cat.svg')}}"/>
-            <div class = "nomeUsuario">Meu Nome De usuário</div>
-        </div>
-        <div class="conteudoImagem">
-            <img class = "imagemMensagem" src="{{asset('Imagens/gato.jpg')}}"/>
-            <div class = "detalhesMensagem">
-              <div class = "horarioEnvio">Hoje - 11:23</div>
-              <div class = "likesPai"><img class = "like" src = "{{asset('Imagens/like.svg')}}"/><div class ="numeroLikes">99</div></div>
-            </div>
-        </div>
-
-        <div class="divisoria"></div>
-
-        <!---------------------------- Mensagem ------------------------------->
-
-        <div class = "usuario">
-            <img src="{{asset('Imagens/cat.svg')}}"/>
-            <div class = "nomeUsuario">Meu Nome De usuário</div>
-        </div>
-        <div class="conteudoImagem">
-            <img class = "imagemMensagem" src="{{asset('Imagens/gato.jpg')}}"/>
-            <div class = "detalhesMensagem">
-              <div class = "horarioEnvio">Hoje - 11:23</div>
-              <div class = "likesPai"><img class = "like" src = "{{asset('Imagens/like.svg')}}"/><div class ="numeroLikes">99</div></div>
-            </div>
-        </div>
-        <div class="divisoria"></div>
-
-        <!---------------------------- Mensagem ------------------------------->
-
-        <div class = "usuario">
-            <img src="{{asset('Imagens/cat.svg')}}"/>
-            <div class = "nomeUsuario">Meu Nome De usuário</div>
-        </div>
-        <div class = "mensagemForum">
-        <div class="textoForum">
-          <div class = "mensagemResposta">Resposta para <b>Usuario Teste</b></div>
-            Meu nome é Yoshikage Kira. Tenho 33 anos. Minha casa fica na parte nordeste de Morioh, onde todas as casas estão, e eu não sou casado. Eu trabalho como funcionário das lojas de departamentos Kame Yu e chego em casa todos os dias às oito da noite, no máximo. Eu não fumo, mas ocasionalmente bebo. Estou na cama às 23 horas e me certifico de ter oito horas de sono, não importa o que aconteça. Depois de tomar um copo de leite morno e fazer cerca de vinte minutos de alongamentos antes de ir para a cama, geralmente não tenho problemas para dormir até de manhã. Assim como um bebê, eu acordo sem nenhum cansaço ou estresse pela manhã. Foi-me dito que não houve problemas no meu último check-up. Estou tentando explicar que sou uma pessoa que deseja viver uma vida muito tranquila. Eu cuido para não me incomodar com inimigos, como ganhar e perder, isso me faria perder o sono à noite. É assim que eu lido com a sociedade e sei que é isso que me traz felicidade. Embora, se eu fosse lutar, não perderia para ninguém.
-        </div>
-          <div class = "detalhesMensagem">
-            <div class = "horarioEnvio">Hoje - 11:23</div>
-            <div class = "likesPai"><img class = "like" src = "{{asset('Imagens/like.svg')}}"/><div class ="numeroLikes">99</div></div>
+      @foreach($mensagens as $mensagem)
+      @if($mensagem->imagem == NULL)
+          <div class = "usuario">
+              <img src="{{asset('usuario/'. $mensagem->image)}}"/>
+              <div class = "nomeUsuario">{{$mensagem->name}}</div>
           </div>
+          <div class = "mensagemForum">
+            <div class="textoForum">
+              {{$mensagem->mensagem}}
+            </div>
+            <div class = "detalhesMensagem">
+              <div class = "horarioEnvio">{{date_format(date_create($mensagem->data_envio),"d/m/Y - H:i:s")}}</div>
+              <div class = "likesPai">
+                <a href="{{route('forum.likeComentario', $mensagem->id)}}"><img class = "like" src = "{{asset('Imagens/like.svg')}}"/></a>
+                <div class ="numeroLikes">{{$mensagem->numero_likes}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="divisoria"></div>
+      
+      @elseif($mensagem->mensagem == NULL)
+      <div class = "usuario">
+              <img src="{{asset('usuario/'. $mensagem->image)}}"/>
+              <div class = "nomeUsuario">{{$mensagem->name}}</div>
+          </div>
+          <div class="conteudoImagem">
+            <img class = "imagemMensagem" src="{{asset('mensagens/'. $mensagem->imagem)}}"/>
+            <div class = "detalhesMensagem">
+              <div class = "horarioEnvio">{{date_format(date_create($mensagem->data_envio),"d/m/Y - H:i:s")}}</div>
+              <div class = "likesPai">
+              <a href="{{route('forum.likeComentario', $mensagem->id)}}"><img class = "like" src = "{{asset('Imagens/like.svg')}}"/></a>
+                <div class ="numeroLikes">{{$mensagem->numero_likes}}</div>
+              </div>
+            </div>
         </div>
-        <div class="divisoria"></div>
-
-        <!---------------------------- Mensagem ------------------------------->
-
-        <div class = "usuario">
-          <img src="{{asset('Imagens/cat.svg')}}"/>
-          <div class = "nomeUsuario">Meu Nome De usuário</div>
-      </div>
-      <div class = "mensagemForum">
-      <div class="textoForum">
-          Meu nome é Yoshikage Kira. Tenho 33 anos. Minha casa fica na parte nordeste de Morioh, onde todas as casas estão, e eu não sou casado. Eu trabalho como funcionário das lojas de departamentos Kame Yu e chego em casa todos os dias às oito da noite, no máximo. Eu não fumo, mas ocasionalmente bebo. Estou na cama às 23 horas e me certifico de ter oito horas de sono, não importa o que aconteça. Depois de tomar um copo de leite morno e fazer cerca de vinte minutos de alongamentos antes de ir para a cama, geralmente não tenho problemas para dormir até de manhã. Assim como um bebê, eu acordo sem nenhum cansaço ou estresse pela manhã. Foi-me dito que não houve problemas no meu último check-up. Estou tentando explicar que sou uma pessoa que deseja viver uma vida muito tranquila. Eu cuido para não me incomodar com inimigos, como ganhar e perder, isso me faria perder o sono à noite. É assim que eu lido com a sociedade e sei que é isso que me traz felicidade. Embora, se eu fosse lutar, não perderia para ninguém.
-      </div>
-        <div class = "detalhesMensagem">
-          <div class = "horarioEnvio">Hoje - 11:23</div>
-          <div class = "likesPai"><img class = "like" src = "{{asset('Imagens/like.svg')}}"/><div class ="numeroLikes">99</div></div>
+          <div class="divisoria"></div>
+      @else
+      <div class = "usuario">
+              <img src="{{asset('usuario/'. $mensagem->image)}}"/>
+              <div class = "nomeUsuario">{{$mensagem->name}}</div>
+          </div>
+          <div class="textoForum">
+              {{$mensagem->mensagem}}
+          </div>
+          <div class="conteudoImagem">
+            <img class = "imagemMensagem" src="{{asset('mensagens/'. $mensagem->imagem)}}"/>
+            <div class = "detalhesMensagem">
+              <div class = "horarioEnvio">{{date_format(date_create($mensagem->data_envio),"d/m/Y - H:i:s")}}</div>
+              <div class = "likesPai">
+              <a href="{{route('forum.likeComentario', $mensagem->id)}}"><img class = "like" src = "{{asset('Imagens/like.svg')}}"/></a>
+                <div class ="numeroLikes">{{$mensagem->numero_likes}}</div>
+              </div>
+            </div>
         </div>
-      </div>
-      <div class="divisoria"></div>
+          <div class="divisoria"></div>
+      @endif
+      @endforeach
 
         <!---------------------------- Escrever mensagem ------------------------------->
-        <form method="post" action="{{route('forum.gravar')}}" enctype="multipart/form-data">
+        <form method="post" onsubmit="validacaoMensagem(event)" action="{{route('forum.mensagemGravar')}}" enctype="multipart/form-data">
+          @csrf
             <div class = "containerMensagemUser">
-        
-            <input type="text" class="form-control" id="mensagemUser" aria-describedby="mensagem" placeholder="Digite uma mensagem"/>
-            <img  style="cursor:pointer;" src = "{{asset('Imagens/clip.svg')}}"/>
-            <button class="btn btn-primary">Enviar</button>
-            
+              <input type="hidden" name="idForum" id="idForum" value="{{$forum}}"/>
+              <input type="text" class="form-control" id="mensagemUser" aria-describedby="mensagem" name="mensagem" placeholder="Digite uma mensagem"/>
+              <input onchange="mostraValorImagem()" class="fileMensagem" name='imagem' type="file" id="fileMensagem" aria-label="File browser example">
+              <img style="cursor:pointer;" onclick="executaSelecaoImagem()" id="imagemFileMensagem" src = "{{asset('Imagens/clip.svg')}}"/>
+              <button type = "submit" class="btn btn-primary">Enviar</button>
             </div>
         </form>
     </div>

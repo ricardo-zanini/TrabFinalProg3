@@ -686,7 +686,7 @@
     </div>
     <div class="filhosnavEsquerda">
       @foreach($favoritos as $favorito)
-      <a class="linkForum" href="{{route('forum.forum', $favorito) }}">
+      <a class="linkForum" href="{{route('forum.forum', $favorito->id_forum) }}">
         <div class="forumNavEsquerda"> <img src="{{asset('Imagens/cat.svg')}}" />
           <div>Fórum teste {{$favorito->nome}}</div>
         </div>
