@@ -52,21 +52,9 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
-        'imagens' => [
-            'driver' => 'local',
-            'root' => storage_path('imagens'),
-            'url' => env('APP_URL').'/img',
-            'visibility' => 'public',
-           ],
+       
 
-        //-------- Geração do caminho para armazenamento de imagens de Galeria de posts --------
-
-        'imagensGaleria' => [
-            'driver' => 'local',
-            'root' => storage_path('imagensGaleria'),
-            'url' => env('APP_URL').'/galeria',
-            'visibility' => 'public',
-        ],
+        
         'imagensForum' => [
             'driver' => 'local',
             'root' => storage_path('imagensForum'),
@@ -100,11 +88,6 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('img') => storage_path('imagens'),
-
-        //-------- Link para a pasta galeria --------
-
-        public_path('galeria') => storage_path('imagensGaleria'),
         public_path('forum') => storage_path('imagensForum'),
         public_path('usuario') => storage_path('imagensUsuario'),
         public_path('mensagens') => storage_path('imagensMensagens')

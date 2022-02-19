@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class foruns_acessados extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 }

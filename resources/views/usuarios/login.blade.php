@@ -87,76 +87,16 @@ color: #187271c2;
     border-color:#41b8b6c2;
 
 }
-.labelCheck{
-  
-}
 .form-check-input[type=checkbox]{
   border-radius:30px;
 }
 .form-check{
   padding-top:20px;
 }
-/*# sourceMappingURL=styleLogin.css.map */
 </style>
 @endpush
 
 @section('content')
-    <!-- <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-     
-    <link href="https://getbootstrap.com/docs/5.1/examples/sign-in/signin.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
-    
-<main class="form-signin">
-
-    @if (session('erro'))
-    
-     
-    <div class="alert alert-danger" role="alert">
-    {{ session('erro') }}
-    </div>
-
-    @endif
-
-  <form method="post" action="{{ route('login') }}">
-    @csrf
-
-    <h1 class="h3 mb-3 fw-normal">Faça seu login</h1>
-
-    <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Usuário" name="username">
-      <label for="floatingInput">Usuário</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" name="password">
-      <label for="floatingPassword">Senha</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input name="lembrar" type="checkbox" value="remember-me"> Lembrar
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
-    
-  </form>
-</main> -->
 
 <div class = "containerLogin">
         <div class = "alinhamento"><img class = "logoSite" src="{{asset('Imagens/cat.svg')}}"/></div>

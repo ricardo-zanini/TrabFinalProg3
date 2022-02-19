@@ -106,9 +106,6 @@
             .file-custom {
             border-radius: 200px !important;
             }
-
-            
-
             .file-custom:after {
             content: "Escolha um arquivo" !important;
             }
@@ -121,10 +118,7 @@
             -webkit-box-shadow: 2px 2px 1px 0.2rem #41b8b63a !important;
                     box-shadow: 2px 2px 1px 0.2rem #41b8b63a !important;
             }
-
     </style>
-   
-   
 @endpush
 
 @section('content')

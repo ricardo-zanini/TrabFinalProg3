@@ -10,18 +10,14 @@ use Illuminate\Support\Facades\Auth;
 
 class UsuariosController extends Controller
 {
-    public function index()
-    {
-        $usuarios = Usuario::orderBy('id', 'asc')->get();
 
-        return view('usuarios.index', ['usuarios' => $usuarios, 'pagina' => 'usuarios']);
-    }
-
+    //======== Rota criação de usuários =======
     public function create()
     {
         return view('usuarios.create', ['pagina' => 'usuarios']);
     }
 
+    //======== Rota insert de usuários =======
     public function insert(Request $form)
     {
         if($form->password === $form->repeatPassword ){
@@ -74,9 +70,9 @@ class UsuariosController extends Controller
             senha inválidos.');
             }
         }
-        return view('usuarios.login');
+        return view('usuarios.login', ['pagina' => 'usuarios']);
     }
-
+    //======== logout =======
     public function logout(Request $request)
     {
         Auth::logout();
@@ -85,49 +81,10 @@ class UsuariosController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
 
-    public function profile(Request $request){
-        return view('profile.index', ['pagina' => 'profile']);
-    }
-
-    public function profileEdit(Usuario $user){
-        return view('profile.edit', ['user' => $user, 'pagina' => 'profile']);
-    }
-
-    public function profilePassword(Usuario $user){
-        return view('profile.password', ['user' => $user, 'pagina' => 'profile']);
-    }
-
-    public function profileUpdatePassword(Request $form){
-        $user = Auth::user();
-        if(Hash::check($form->password,$user->password)){
-            if($form->novaSenha === $form->confirmarSenha){
-                $user->password = Hash::make($form->novaSenha);
-                $user->save();
-            }
-            else{
-                return view('profile.password', ['alert' => 'danger','mensagem'=> "Você não confirmou sua senha corretamente",'user' => $user, 'pagina' => 'profile']);
-            }
-        }
-        else{
-            return view('profile.password', ['alert' => 'danger','mensagem'=> "Senha Atual Incorreta",'user' => $user, 'pagina' => 'profile']);
-        }
-
-        return view('profile.password', ['alert' => 'success', 'mensagem'=> "Senha Alterada",'user' => $user, 'pagina' => 'profile']);
-    }
-    public function profileUpdateProfile(Request $form){
-        $user = Auth::user();
-        $user->name = $form->nome;
-        $user->email = $form->email;
-        $user->save();
-        
-
-        return view('profile.index', ['pagina' => 'profile']);
-    }
-
-
+    //======== Rota de cadastro =======
     public function cadastro(){
         return view('usuarios.cadastro', ['pagina' => 'usuarios']);
     }
